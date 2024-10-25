@@ -4,7 +4,6 @@ export const Header = () => (
     <Title>Shop-Spot</Title>
     <nav>
       <List>
-        <Item>Home</Item>
         <Item>Electronics</Item>
         <Item>Jewelery</Item>
         <Item>men's clothing</Item>
