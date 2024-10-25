@@ -1,10 +1,10 @@
 import { HashRouter } from "react-router-dom";
-import { Header } from "./common/Header";
+import { Navigation } from "./common/Navigation";
 
 function App() {
   return (
     <HashRouter>
-      <Header />
+      <Navigation />
     </HashRouter>
   );
 }
