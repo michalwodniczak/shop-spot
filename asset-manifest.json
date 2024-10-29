@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/shop-spot/static/js/main.a34f959b.js",
+    "main.js": "/shop-spot/static/js/main.52ca2dae.js",
     "index.html": "/shop-spot/index.html",
-    "main.a34f959b.js.map": "/shop-spot/static/js/main.a34f959b.js.map"
+    "main.52ca2dae.js.map": "/shop-spot/static/js/main.52ca2dae.js.map"
   },
   "entrypoints": [
-    "static/js/main.a34f959b.js"
+    "static/js/main.52ca2dae.js"
   ]
 }
