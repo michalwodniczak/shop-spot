@@ -31,36 +31,36 @@ export const Menu = () => {
           <Button onClick={toggleMenu} aria-label="Toggle menu">
             <img src={hamburgerIcon} alt="Menu Icon" />
           </Button>
-            <Overlay isOpen={isMenuOpen}>
-              <List mobile>
-                <Item>
-                  <StyledNavLink>Electronics</StyledNavLink>
-                </Item>
-                <Item>
-                  <StyledNavLink>Jewelery</StyledNavLink>
-                </Item>
-                <Item>
-                  <StyledNavLink>Men's clothing</StyledNavLink>
-                </Item>
-                <Item>
-                  <StyledNavLink>Women's clothing</StyledNavLink>
-                </Item>
-              </List>
-            </Overlay>
+          <Overlay isOpen={isMenuOpen}>
+            <List mobile>
+              <Item>
+                <StyledNavLink to="/">Electronics</StyledNavLink>
+              </Item>
+              <Item>
+                <StyledNavLink to="/">Jewelery</StyledNavLink>
+              </Item>
+              <Item>
+                <StyledNavLink to="/">Men's clothing</StyledNavLink>
+              </Item>
+              <Item>
+                <StyledNavLink to="/">Women's clothing</StyledNavLink>
+              </Item>
+            </List>
+          </Overlay>
         </>
       ) : (
         <List>
           <Item>
-            <StyledNavLink>Electronics</StyledNavLink>
+            <StyledNavLink to="/">Electronics</StyledNavLink>
           </Item>
           <Item>
-            <StyledNavLink>Jewelery</StyledNavLink>
+            <StyledNavLink to="/">Jewelery</StyledNavLink>
           </Item>
           <Item>
-            <StyledNavLink>Men's clothing</StyledNavLink>
+            <StyledNavLink to="/">Men's clothing</StyledNavLink>
           </Item>
           <Item>
-            <StyledNavLink>Women's clothing</StyledNavLink>
+            <StyledNavLink to="/">Women's clothing</StyledNavLink>
           </Item>
         </List>
       )}
