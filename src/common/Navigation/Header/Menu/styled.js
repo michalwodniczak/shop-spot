@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { NavLink, redirect } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const Overlay = styled.div`
   background-color: ${({ theme }) => theme.colors.gray};
