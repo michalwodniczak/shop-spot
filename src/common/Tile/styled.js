@@ -8,11 +8,16 @@ export const LargeListWrapper = styled.ul`
   row-gap: 20px;
   margin: 0 auto;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints.mediumDevice}px) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-left: -10px;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     width: 100%;
     grid-template-columns: 1fr;
     row-gap: 10px;
-    padding:34px;
+    padding: 34px;
   }
 `;
 
