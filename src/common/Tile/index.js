@@ -6,7 +6,6 @@ import {
   TileTitle,
   TilePrice,
 } from "./styled";
-
 import { Star } from "../Star";
 
 export const ListLargeTile = ({ image, name, price, rate }) => {

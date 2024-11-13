@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 80px auto;
-  text-align: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    width: 100%;
+    margin-top: 20px;
+  }
 `;

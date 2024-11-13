@@ -5,9 +5,11 @@ export const Wrapper = styled.div`
   max-width: 1200px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content:space-around;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    justify-content: space-around;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;;
   }
 `;
