@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 export const LargeListWrapper = styled.ul`
   list-style-type: none;
@@ -73,4 +74,9 @@ export const TileTitle = styled.h2`
 export const TilePrice = styled.p`
   font-weight: 700;
   font-size: 20px;
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
 `;
