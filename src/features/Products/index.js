@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Main } from "../../common/Main/Main";
 import { fetchProducts, selectProducts } from "./productsSlice";
 import { useEffect } from "react";
-import { LargeListWrapper } from "../../common/Tile/styled";
+import { LargeListWrapper,StyledLink } from "../../common/Tile/styled";
 import { ListLargeTile } from "../../common/Tile";
 
 export const Products = () => {
@@ -18,13 +18,15 @@ export const Products = () => {
       <LargeListWrapper>
         {products.map((product) => (
           <li key={product.id}>
-            <ListLargeTile
-              image={product.image}
-              name={product.title}
-              rate={product.rating.rate}
-              countRate={product.rating.count}
-              price={product.price}
-            />
+            <StyledLink to={`products/${product.id}`}>
+              <ListLargeTile
+                image={product.image}
+                name={product.title}
+                rate={product.rating.rate}
+                countRate={product.rating.count}
+                price={product.price}
+              />
+            </StyledLink>
           </li>
         ))}
       </LargeListWrapper>
