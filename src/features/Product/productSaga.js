@@ -1,17 +1,18 @@
-import { call, put, takeLatest, select } from "redux-saga/effects";
+import { call, takeLatest, put, delay } from "redux-saga/effects";
+import { fetchProduct, fetchProductSucces, setProductId } from "./productSlice";
 import { getProduct } from "../../getProduct";
-import { selectProductId, setProductId } from "./productSlice";
 
-function* fetchProductHandler() {
+function* fetchProductHandler({ payload: id }) {
   try {
-    const productId = yield select(selectProductId);
-    const product = yield call(getProduct);
-    yield put(setProductId(productId));
+    yield delay(1000)
+    const product = yield call(getProduct, id);
+    yield put(fetchProductSucces(product));
+    yield put(setProductId(id));
   } catch {
     yield call(alert, "coś poszło nie tak");
   }
 }
 
 export function* watchFetchProduct() {
-  yield takeLatest(setProductId.type, fetchProductHandler);
+  yield takeLatest(fetchProduct.type, fetchProductHandler);
 }
