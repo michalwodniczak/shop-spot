@@ -30,8 +30,8 @@ export const Product = () => {
       <DetailsTile
         name={product.description.title}
         image={product.description.image}
+        rate={product?.description?.rating?.rate || 0}
         price={product.description.price}
-        rate={product.description.rating.rate}
         description={product.description.description}
       ></DetailsTile>
     </Main>
