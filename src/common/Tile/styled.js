@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 export const LargeListWrapper = styled.ul`
   list-style-type: none;
@@ -38,7 +39,6 @@ export const Tile = styled.article`
 export const TileImageContainer = styled.div`
   width: 100px;
   height: 150px;
-  display: flex;
   overflow: hidden;
   margin: 20px auto;
 
@@ -73,4 +73,42 @@ export const TileTitle = styled.h2`
 export const TilePrice = styled.p`
   font-weight: 700;
   font-size: 20px;
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+`;
+
+export const DetailTile = styled(Tile)`
+  max-width: 1200px;
+  height: auto;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+`;
+
+export const DetailImageContainer = styled(TileImageContainer)`
+  width: 300px;
+  height: 300px;
+`;
+
+export const DetailImage = styled(TileImage)``;
+
+export const DetailTextContainer = styled(TileTextContainer)`
+  width: 600px;
+  align-items: flex-start;
+`;
+
+export const DetailTitle = styled(TileTitle)`
+  font-size: 40px;
+  font-weight: bold;
+`;
+
+export const DetailPrice = styled(TilePrice)`
+  font-size: 32px;
+`;
+
+export const DetailDescription = styled.p`
+  font-size: 18px;
 `;

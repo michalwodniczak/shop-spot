@@ -5,6 +5,13 @@ import {
   TileTextContainer,
   TileTitle,
   TilePrice,
+  DetailTile,
+  DetailImageContainer,
+  DetailTextContainer,
+  DetailImage,
+  DetailTitle,
+  DetailPrice,
+  DetailDescription,
 } from "./styled";
 import { Star } from "../Star";
 
@@ -20,5 +27,21 @@ export const ListLargeTile = ({ image, name, price, rate }) => {
         <TilePrice>{price ? price : "sorry dont have price now"}$</TilePrice>
       </TileTextContainer>
     </Tile>
+  );
+};
+
+export const DetailsTile = ({ image, name, price, rate, description }) => {
+  return (
+    <DetailTile>
+      <DetailImageContainer>
+        {image ? <DetailImage src={image} alt={name} /> : ""}
+      </DetailImageContainer>
+      <DetailTextContainer>
+        <DetailTitle>{name ? name : "no name"}</DetailTitle>
+        {rate ? <Star rating={rate} /> : "no rate"}
+        <DetailPrice>{price} $</DetailPrice>
+        <DetailDescription>{description}</DetailDescription>
+      </DetailTextContainer>
+    </DetailTile>
   );
 };
