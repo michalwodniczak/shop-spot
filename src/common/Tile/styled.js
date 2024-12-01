@@ -11,14 +11,12 @@ export const LargeListWrapper = styled.ul`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mediumDevice}px) {
     grid-template-columns: repeat(2, 1fr);
-    margin-left: -10px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     width: 100%;
     grid-template-columns: 1fr;
-    row-gap: 10px;
-    padding: 34px;
+    padding: 24px;
   }
 `;
 
@@ -81,11 +79,15 @@ export const StyledLink = styled(Link)`
 `;
 
 export const DetailTile = styled(Tile)`
-  max-width: 1200px;
+  max-width: 100%;
   height: auto;
   flex-direction: row;
   align-items: center;
   padding: 20px;
+
+  @media (max-width: ${({theme}) => theme.breakpoints.mobile}px){
+    padding:10px;
+  }
 `;
 
 export const DetailImageContainer = styled(TileImageContainer)`
