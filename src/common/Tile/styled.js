@@ -11,14 +11,12 @@ export const LargeListWrapper = styled.ul`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mediumDevice}px) {
     grid-template-columns: repeat(2, 1fr);
-    margin-left: -10px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     width: 100%;
     grid-template-columns: 1fr;
-    row-gap: 10px;
-    padding: 34px;
+    padding: 24px;
   }
 `;
 
@@ -81,34 +79,66 @@ export const StyledLink = styled(Link)`
 `;
 
 export const DetailTile = styled(Tile)`
-  max-width: 1200px;
+  max-width: 100%;
   height: auto;
   flex-direction: row;
   align-items: center;
   padding: 20px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mediumDevice}px) {
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    flex-direction: column;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    max-width: calc(100% - 20px);
+  }
 `;
 
 export const DetailImageContainer = styled(TileImageContainer)`
   width: 300px;
   height: 300px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    width: 150px;
+    height: 150px;
+  }
 `;
 
-export const DetailImage = styled(TileImage)``;
+export const DetailImage = styled(TileImage)`
+  width: 100%;
+`;
 
 export const DetailTextContainer = styled(TileTextContainer)`
   width: 600px;
   align-items: flex-start;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    width: calc(100% - 6px);
+  }
 `;
 
 export const DetailTitle = styled(TileTitle)`
   font-size: 40px;
   font-weight: bold;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mediumDevice}px) {
+    font-size: 24px;
+  }
 `;
 
 export const DetailPrice = styled(TilePrice)`
   font-size: 32px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mediumDevice}px) {
+    font-size: 24px;
+  }
 `;
 
 export const DetailDescription = styled.p`
   font-size: 18px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    font-size: 14px;
+  }
 `;
