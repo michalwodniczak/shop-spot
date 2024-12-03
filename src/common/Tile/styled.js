@@ -137,6 +137,7 @@ export const DetailPrice = styled(TilePrice)`
 
 export const DetailDescription = styled.p`
   font-size: 18px;
+  color: ${({ theme }) => theme.colors.gray};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 14px;
