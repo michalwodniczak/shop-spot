@@ -14,7 +14,6 @@ import {
   DetailDescription,
 } from "./styled";
 import { Star } from "../Star";
-import { Button } from "../Button";
 
 export const ListLargeTile = ({ image, name, price, rate }) => {
   return (
@@ -31,7 +30,7 @@ export const ListLargeTile = ({ image, name, price, rate }) => {
   );
 };
 
-export const DetailsTile = ({ image, name, price, rate, description }) => {
+export const DetailsTile = ({ image, name, price, rate, description, id }) => {
   return (
     <DetailTile>
       <DetailImageContainer>
@@ -42,7 +41,6 @@ export const DetailsTile = ({ image, name, price, rate, description }) => {
         {rate ? <Star rating={rate} /> : "no rate"}
         <DetailPrice>{price} $</DetailPrice>
         <DetailDescription>{description}</DetailDescription>
-        <Button />
       </DetailTextContainer>
     </DetailTile>
   );
