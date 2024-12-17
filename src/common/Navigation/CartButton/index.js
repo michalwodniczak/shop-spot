@@ -4,7 +4,7 @@ import { Button } from "./styled";
 
 export const CartButton = () => {
   return (
-    <Link to="/">
+    <Link to="/cart">
       <Button>
         <img src={CartIcon} alt="" />
       </Button>
