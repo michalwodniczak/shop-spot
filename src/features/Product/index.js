@@ -5,13 +5,14 @@ import {
   useLocation,
 } from "react-router-dom/cjs/react-router-dom.min";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProduct, selectProduct } from "./productSlice";
+import { fetchProduct, selectDescription } from "./productSlice";
 import { Main } from "../../common/Main/Main";
 import { DetailsTile } from "../../common/Tile";
+import { Button } from "../../common/Button/index";
 
 export const Product = () => {
   const { id } = useParams();
-  const product = useSelector(selectProduct);
+  const product = useSelector(selectDescription);
   console.log(product);
   const dispatch = useDispatch();
   const location = useLocation();
@@ -21,19 +22,21 @@ export const Product = () => {
     dispatch(fetchProduct(id));
   }, [id, dispatch]);
 
-  if(!product){
-    return <p>Loading</p>
+  if (!product) {
+    return <p>Loading</p>;
   }
-  
+
   return (
     <Main>
       <DetailsTile
-        name={product.description.title}
-        image={product.description.image}
-        rate={product?.description?.rating?.rate || 0}
-        price={product.description.price}
-        description={product.description.description}
-      ></DetailsTile>
+        name={product.title}
+        image={product.image}
+        rate={product?.rating?.rate || 0}
+        price={product.price}
+        description={product.description}
+      >
+        <Button product={product} />
+      </DetailsTile>
     </Main>
   );
 };
