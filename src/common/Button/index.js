@@ -4,13 +4,19 @@ import { addToCart } from "../../features/Product/productSlice";
 
 export const Button = ({ product }) => {
   const dispatch = useDispatch();
-
+ 
   const handleAddToCart = () => {
-    if (product && product.id) {
-      dispatch(addToCart(product));
-    } else {
-      console.error("produkt nie zostałdodany");
+    const cartProduct = {
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      image: product.image,
     }
+    
+    if (cartProduct && cartProduct.id) {
+      dispatch(addToCart(cartProduct));
+    } 
+    
   };
   return <StyledButton onClick={handleAddToCart}>Add to Cart</StyledButton>;
 };
