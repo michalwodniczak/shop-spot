@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { StyledButton } from "./styled";
-import { addToCart } from "../../features/Product/productSlice";
+import { addToCart } from "../../features/Cart/cartSlice";
 
 export const Button = ({ product }) => {
   const dispatch = useDispatch();
