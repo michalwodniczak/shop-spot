@@ -30,7 +30,7 @@ export const ListLargeTile = ({ image, name, price, rate }) => {
   );
 };
 
-export const DetailsTile = ({ image, name, price, rate, description, id }) => {
+export const DetailsTile = ({ image, name, price, rate, description, children }) => {
   return (
     <DetailTile>
       <DetailImageContainer>
@@ -41,6 +41,7 @@ export const DetailsTile = ({ image, name, price, rate, description, id }) => {
         {rate ? <Star rating={rate} /> : "no rate"}
         <DetailPrice>{price} $</DetailPrice>
         <DetailDescription>{description}</DetailDescription>
+        {children}
       </DetailTextContainer>
     </DetailTile>
   );
