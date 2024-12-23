@@ -12,6 +12,12 @@ import {
   DetailTitle,
   DetailPrice,
   DetailDescription,
+  CartTile,
+  CartImageContainer,
+  CartTitle,
+  CartTextContainer,
+  CartPrice,
+  CartImage,
 } from "./styled";
 import { Star } from "../Star";
 
@@ -30,7 +36,14 @@ export const ListLargeTile = ({ image, name, price, rate }) => {
   );
 };
 
-export const DetailsTile = ({ image, name, price, rate, description, children }) => {
+export const DetailsTile = ({
+  image,
+  name,
+  price,
+  rate,
+  description,
+  children,
+}) => {
   return (
     <DetailTile>
       <DetailImageContainer>
@@ -39,10 +52,25 @@ export const DetailsTile = ({ image, name, price, rate, description, children })
       <DetailTextContainer>
         <DetailTitle>{name ? name : "no name"}</DetailTitle>
         {rate ? <Star rating={rate} /> : "no rate"}
-        <DetailPrice>{price} $</DetailPrice>
+        <DetailPrice>{price ? `${price}$` : ""} </DetailPrice>
         <DetailDescription>{description}</DetailDescription>
         {children}
       </DetailTextContainer>
     </DetailTile>
+  );
+};
+
+export const CartsTile = ({ image, name, price, children }) => {
+  return (
+    <CartTile>
+      <CartImageContainer>
+        {image ? <CartImage src={image} alt={name} /> : ""}
+      </CartImageContainer>
+      <CartTextContainer>
+        <CartTitle>{name ? name : ""}</CartTitle>
+        <CartPrice>{price ? `${price}$` : ""}</CartPrice>
+        {children}
+      </CartTextContainer>
+    </CartTile>
   );
 };
