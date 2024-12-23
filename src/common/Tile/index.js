@@ -64,7 +64,7 @@ export const CartsTile = ({ image, name, price, children }) => {
   return (
     <CartTile>
       <CartImageContainer>
-        {image ? <DetailImage src={image} alt={name} /> : ""}
+        {image ? <CartImage src={image} alt={name} /> : ""}
       </CartImageContainer>
       <CartTextContainer>
         <CartTitle>{name ? name : ""}</CartTitle>
