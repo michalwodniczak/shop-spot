@@ -13,7 +13,6 @@ import { Button } from "../../common/Button/index";
 export const Product = () => {
   const { id } = useParams();
   const product = useSelector(selectDescription);
-  console.log(product);
   const dispatch = useDispatch();
   const location = useLocation();
   const history = useHistory();
