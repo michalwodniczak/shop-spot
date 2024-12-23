@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Main } from "../../common/Main/Main";
 import { removeFromCart, selectCart } from "./cartSlice";
-import { CartListWrapper } from "../../common/Tile/styled";
+import { CartListWrapper} from "../../common/Tile/styled";
 import { CartsTile } from "../../common/Tile";
-import { StyledButton } from "../../common/Button/styled";
+import { RemoveButton } from "../../common/Button/styled";
+import { CartText } from "./styled";
 
 export const Cart = () => {
   const cartProducts = useSelector(selectCart);
@@ -13,9 +14,7 @@ export const Cart = () => {
     <Main>
       <CartListWrapper>
         {cartProducts.length === 0 ? (
-          <CartsTile>
-            <p>Koszyk jest pusty!</p>
-          </CartsTile>
+            <CartText>Cart is empty!</CartText>
         ) : (
           cartProducts.map((product) => (
             <CartsTile
@@ -24,9 +23,7 @@ export const Cart = () => {
               image={product.image}
               price={product.price}
             >
-              <StyledButton onClick={() => dispatch(removeFromCart(product))}>
-                Remove to Cart
-              </StyledButton>
+              <RemoveButton onClick={() => dispatch(removeFromCart(product))} />
             </CartsTile>
           ))
         )}

@@ -15,3 +15,18 @@ export const StyledButton = styled.button`
     background-color: ${({ theme }) => theme.colors.gray};
   }
 `;
+
+export const RemoveButton = styled(StyledButton)`
+  display: inline-block;
+  margin-left: 10px;
+
+  &::before{
+    content: "Remove to Cart";
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    &::before {
+      content: "Remove";
+    }
+  }
+`;
