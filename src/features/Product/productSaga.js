@@ -4,7 +4,6 @@ import { getProduct } from "../../getProduct";
 
 function* fetchProductHandler({ payload: id }) {
   try {
-    yield delay(1000)
     const product = yield call(getProduct, id);
     yield put(fetchProductSucces(product));
     yield put(setProductId(id));
