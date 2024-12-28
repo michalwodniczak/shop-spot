@@ -11,13 +11,13 @@ export const saveItemInLocalStorage = (item, expirationMinutes = 15) => {
 
 export const getItemInLocalStorage = () => {
   const storedData = JSON.parse(localStorage.getItem(localStorageKey));
-  if (!storedData) return [];
+  if (!storedData) return { value: [], expirationTime: null };
 
   const { value, expirationTime } = storedData;
   if (Date.now() > expirationTime) {
     localStorage.removeItem(localStorageKey);
-    return [];
+    return { value: [], expirationTime: null };
   }
 
-  return value;
+  return { value, expirationTime };
 };
