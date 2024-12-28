@@ -1,10 +1,9 @@
-import { call, takeLatest, put, delay } from "redux-saga/effects";
+import { call, takeLatest, put } from "redux-saga/effects";
 import { fetchProduct, fetchProductSucces, setProductId } from "./productSlice";
 import { getProduct } from "../../getProduct";
 
 function* fetchProductHandler({ payload: id }) {
   try {
-    yield delay(1000)
     const product = yield call(getProduct, id);
     yield put(fetchProductSucces(product));
     yield put(setProductId(id));

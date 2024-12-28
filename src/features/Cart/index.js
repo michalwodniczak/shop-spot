@@ -9,7 +9,7 @@ import { CartText } from "./styled";
 export const Cart = () => {
   const cartProducts = useSelector(selectCart);
   const dispatch = useDispatch();
-
+  
   return (
     <Main>
       <CartListWrapper>
