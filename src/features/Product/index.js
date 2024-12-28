@@ -5,14 +5,16 @@ import {
   useLocation,
 } from "react-router-dom/cjs/react-router-dom.min";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProduct, selectDescription } from "./productSlice";
+import { fetchProduct, selectDescription, selectStatus } from "./productSlice";
 import { Main } from "../../common/Main/Main";
 import { DetailsTile } from "../../common/Tile";
 import { Button } from "../../common/Button/index";
+import { Loading } from "../../common/Loading";
 
 export const Product = () => {
   const { id } = useParams();
   const product = useSelector(selectDescription);
+  const status = useSelector(selectStatus);
   const dispatch = useDispatch();
   const location = useLocation();
   const history = useHistory();
@@ -21,8 +23,8 @@ export const Product = () => {
     dispatch(fetchProduct(id));
   }, [id, dispatch]);
 
-  if (!product) {
-    return <p>Loading</p>;
+  if (status === "loading") {
+    return <Loading />;
   }
 
   return (
