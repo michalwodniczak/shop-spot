@@ -1,9 +1,9 @@
-import { HashRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Navigation } from "./common/Navigation";
 import { Products } from "./features/Products";
 import { Product } from "./features/Product";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import { Cart } from "./features/Cart";
+import { Category } from "./features/Category";
 
 function App() {
   return (
@@ -15,6 +15,9 @@ function App() {
         </Route>
         <Route path="/products/:id">
           <Product />
+        </Route>
+        <Route path="/category/:categoryName">
+          <Category />
         </Route>
         <Route path="/products">
           <Products />
