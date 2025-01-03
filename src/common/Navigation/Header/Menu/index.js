@@ -34,16 +34,22 @@ export const Menu = () => {
           <Overlay isOpen={isMenuOpen}>
             <List mobile>
               <Item>
-                <StyledNavLink to="/">Electronics</StyledNavLink>
+                <StyledNavLink to="/category/electronics">
+                  Electronics
+                </StyledNavLink>
               </Item>
               <Item>
-                <StyledNavLink to="/">Jewelery</StyledNavLink>
+                <StyledNavLink to="/category/jewelery">Jewelery</StyledNavLink>
               </Item>
               <Item>
-                <StyledNavLink to="/">Men's clothing</StyledNavLink>
+                <StyledNavLink to="/category/men's clothing">
+                  Men's clothing
+                </StyledNavLink>
               </Item>
               <Item>
-                <StyledNavLink to="/">Women's clothing</StyledNavLink>
+                <StyledNavLink to="/category/women's clothing">
+                  Women's clothing
+                </StyledNavLink>
               </Item>
             </List>
           </Overlay>
@@ -51,16 +57,22 @@ export const Menu = () => {
       ) : (
         <List>
           <Item>
-            <StyledNavLink to="/">Electronics</StyledNavLink>
+            <StyledNavLink to="/category/electronics">
+              Electronics
+            </StyledNavLink>
           </Item>
           <Item>
-            <StyledNavLink to="/">Jewelery</StyledNavLink>
+            <StyledNavLink to="/category/jewelery">Jewelery</StyledNavLink>
           </Item>
           <Item>
-            <StyledNavLink to="/">Men's clothing</StyledNavLink>
+            <StyledNavLink to="/category/men's clothing">
+              Men's clothing
+            </StyledNavLink>
           </Item>
           <Item>
-            <StyledNavLink to="/">Women's clothing</StyledNavLink>
+            <StyledNavLink to="/category/women's clothing">
+              Women's clothing
+            </StyledNavLink>
           </Item>
         </List>
       )}
