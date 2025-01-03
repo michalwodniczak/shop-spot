@@ -1,9 +1,5 @@
 import { useEffect } from "react";
-import {
-  useParams,
-  useHistory,
-  useLocation,
-} from "react-router-dom/cjs/react-router-dom.min";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct, selectDescription, selectStatus } from "./productSlice";
 import { Main } from "../../common/Main/Main";
@@ -16,8 +12,6 @@ export const Product = () => {
   const product = useSelector(selectDescription);
   const status = useSelector(selectStatus);
   const dispatch = useDispatch();
-  const location = useLocation();
-  const history = useHistory();
 
   useEffect(() => {
     dispatch(fetchProduct(id));
