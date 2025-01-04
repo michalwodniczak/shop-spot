@@ -38,6 +38,6 @@ export const StyledNavLink = styled(NavLink)`
   color: ${({ theme }) => theme.colors.black};
 
   &:hover {
-    color: blue;
+    border-bottom: 2px solid ${({theme}) => theme.colors.black}
   }
 `;
