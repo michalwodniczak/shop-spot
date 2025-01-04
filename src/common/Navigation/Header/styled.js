@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
@@ -13,8 +14,13 @@ export const Title = styled.h1`
   @media (max-width: ${({ theme }) => theme.breakpoints.mediumDevice}px) {
     font-size: 22px;
   }
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     order: 2;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  color: ${({ theme }) => theme.colors.black};
+  text-decoration: none;
 `;
