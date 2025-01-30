@@ -1,9 +1,9 @@
 const localStorageKey = "cart";
 
-export const saveItemInLocalStorage = (item, expirationMinutes = 15) => {
+export const saveItemInLocalStorage = (item) => {
   const data = {
     value: item,
-    expirationTime: Date.now() + expirationMinutes * 60 * 1000,
+    expirationTime: Date.now() + 1 * 60 * 1000,
   };
 
   localStorage.setItem(localStorageKey, JSON.stringify(data));
