@@ -13,7 +13,7 @@ export const Cart = () => {
 
   return (
     <Main>
-      {cartProducts.length !== 0 ? <CartTimer /> : null}
+      <CartTimer />
       <CartListWrapper>
         {cartProducts.length === 0 ? (
           <CartText>Cart is empty!</CartText>
