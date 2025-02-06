@@ -10,6 +10,6 @@ export const Wrapper = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     width: 100%;
     justify-content: space-between;
-    padding: 10px;;
+    padding: 10px;
   }
 `;
