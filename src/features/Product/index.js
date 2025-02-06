@@ -6,6 +6,7 @@ import { Main } from "../../common/Main/Main";
 import { DetailsTile } from "../../common/Tile";
 import { Button } from "../../common/Button/index";
 import { Loading } from "../../common/Loading";
+import { CartTimer } from "../Cart/CartTimer";
 
 export const Product = () => {
   const { id } = useParams();
@@ -23,6 +24,7 @@ export const Product = () => {
 
   return (
     <Main>
+      <CartTimer/>
       <DetailsTile
         name={product.title}
         image={product.image}
