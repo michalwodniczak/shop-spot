@@ -38,7 +38,7 @@ export const CartTimer = () => {
   if (cartProducts.length !== 0) {
     return (
       <Wrapper>
-        <Text>Twoje zakupy pozostaną w koszyku jeszcze przez:</Text>
+        <Text>Your purchases will remain in the cart for:</Text>
         <Text>
           {minutes ? `${minutes} min ` : null}
           {seconds ? `${seconds} sec` : null}
