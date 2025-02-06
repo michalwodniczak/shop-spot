@@ -1,13 +1,17 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchItems, selectStatus, setCategory } from "./categorySlice";
+import {
+  fetchItems,
+  selectStatus,
+  setCategory,
+  selectItems,
+} from "./categorySlice";
 import { Loading } from "../../common/Loading";
-import { selectItems } from "./categorySlice";
 import { Main } from "../../common/Main/Main";
-import { LargeListWrapper } from "../../common/Tile/styled";
-import { StyledLink } from "../../common/Tile/styled";
+import { LargeListWrapper, StyledLink } from "../../common/Tile/styled";
 import { ListLargeTile } from "../../common/Tile";
+import { CartTimer } from "../Cart/CartTimer";
 
 export const Category = () => {
   const dispatch = useDispatch();
@@ -25,6 +29,7 @@ export const Category = () => {
   }
   return (
     <Main>
+      <CartTimer/>
       <LargeListWrapper>
         {products.map((product) => (
           <li key={product.id}>

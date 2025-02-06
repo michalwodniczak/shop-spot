@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { LargeListWrapper, StyledLink } from "../../common/Tile/styled";
 import { ListLargeTile } from "../../common/Tile";
 import { Loading } from "../../common/Loading";
+import { CartTimer } from "../Cart/CartTimer";
 
 export const Products = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ export const Products = () => {
 
   return (
     <Main>
+      <CartTimer/>
       <LargeListWrapper>
         {products.map((product) => (
           <li key={product.id}>
