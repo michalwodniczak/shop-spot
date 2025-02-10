@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "styled-components";
-import { Button } from "../../CartButton/styled";
 import { Item, List, StyledNavLink, Overlay } from "./styled";
-import hamburgerIcon from "../../../../assets/hamburgerMenu.png";
 import { Nav } from "../styled";
-
+import { HamburgerButton } from "./HamburgerButton";
 
 export const Menu = () => {
   const theme = useTheme();
@@ -30,29 +28,38 @@ export const Menu = () => {
     <Nav>
       {isMobile ? (
         <>
-          <Button onClick={toggleMenu} aria-label="Toggle menu">
-            <img src={hamburgerIcon} alt="Menu Icon" />
-          </Button>
+          <HamburgerButton isOpen={isMenuOpen} toggleMenu={toggleMenu} />
           <Overlay isOpen={isMenuOpen}>
-          <Button onClick={toggleMenu} aria-label="Toggle menu">
-            <img src={hamburgerIcon} alt="Menu Icon" />
-          </Button>
             <List mobile>
               <Item>
-                <StyledNavLink to="/category/electronics" onClick={()=> setIsMenuOpen(false)}>
+                <StyledNavLink
+                  to="/category/electronics"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Electronics
                 </StyledNavLink>
               </Item>
               <Item>
-                <StyledNavLink to="/category/jewelery" onClick={()=> setIsMenuOpen(false)}>Jewelery</StyledNavLink>
+                <StyledNavLink
+                  to="/category/jewelery"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Jewelery
+                </StyledNavLink>
               </Item>
               <Item>
-                <StyledNavLink to="/category/men's clothing" onClick={()=> setIsMenuOpen(false)}>
+                <StyledNavLink
+                  to="/category/men's clothing"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Men's clothing
                 </StyledNavLink>
               </Item>
               <Item>
-                <StyledNavLink to="/category/women's clothing" onClick={()=> setIsMenuOpen(false)}>
+                <StyledNavLink
+                  to="/category/women's clothing"
+                  onClick={() => setIsMenuOpen(false)}
+                >
                   Women's clothing
                 </StyledNavLink>
               </Item>
