@@ -2,14 +2,13 @@ import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const Overlay = styled.div`
-  background-color: ${({ theme }) => theme.colors.gray};
+  background-color: ${({ theme }) => theme.colors.white};
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   z-index: 1;
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
-  opacity: 0.9;
 `;
 
 export const List = styled.ul`
@@ -38,6 +37,6 @@ export const StyledNavLink = styled(NavLink)`
   color: ${({ theme }) => theme.colors.black};
 
   &:hover {
-    border-bottom: 2px solid ${({theme}) => theme.colors.black}
+    border-bottom: 2px solid ${({ theme }) => theme.colors.black};
   }
 `;
