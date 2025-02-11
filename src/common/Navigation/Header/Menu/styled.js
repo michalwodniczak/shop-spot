@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 
 export const Overlay = styled.div`
   background-color: ${({ theme }) => theme.colors.white};
-  position: fixed;
+  position: absolute;
   top: 0;
-  left: 0;
-  width: 100vw;
+  left: 60px;
+  width: 330px;
   z-index: 1;
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
 `;
@@ -27,7 +27,7 @@ export const Item = styled.li`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 200px;
   }
 `;
