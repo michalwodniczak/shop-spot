@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/shop-spot/static/js/main.d0323f1b.js",
+    "main.js": "/shop-spot/static/js/main.770635d5.js",
     "index.html": "/shop-spot/index.html",
     "static/media/loading.svg": "/shop-spot/static/media/loading.950e7b48156c211ecdd68e4c2f0f0741.svg",
-    "main.d0323f1b.js.map": "/shop-spot/static/js/main.d0323f1b.js.map"
+    "main.770635d5.js.map": "/shop-spot/static/js/main.770635d5.js.map"
   },
   "entrypoints": [
-    "static/js/main.d0323f1b.js"
+    "static/js/main.770635d5.js"
   ]
 }
