@@ -16,13 +16,12 @@ export const Line = styled.span`
   display: block;
   height: 4px;
   background-color: black;
-  border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
   transform-origin: center;
 
   &:nth-child(1) {
     transform: ${({ isOpen }) =>
-      isOpen ? "translateY(13px) rotate(45deg)" : "none"};
+      isOpen ? "translateY(12px) rotate(45deg)" : "none"};
   }
 
   &:nth-child(2) {
@@ -31,6 +30,6 @@ export const Line = styled.span`
 
   &:nth-child(3) {
     transform: ${({ isOpen }) =>
-      isOpen ? "translateY(-13px) rotate(-45deg)" : "none"};
+      isOpen ? "translateY(-12px) rotate(-45deg)" : "none"};
   }
 `;
