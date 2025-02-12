@@ -6,19 +6,20 @@ import { Wrapper, Text } from "./styled";
 export const CartTimer = () => {
   const dispatch = useDispatch();
   const cartProducts = useSelector(selectCart);
-  const [timeLeft, setTimeLeft] = useState(() => {
+  const [timeLeft, setTimeLeft] = useState(0);
+
+  useEffect(() => {
     const storeData = JSON.parse(localStorage.getItem("cart"));
     if (storeData?.expirationTime) {
       const remainingTime = Math.floor(
         (storeData.expirationTime - Date.now()) / 1000
       );
-      return remainingTime > 0 ? remainingTime : 0;
+      setTimeLeft(remainingTime > 0 ? remainingTime : 0);
     }
-    return 0;
-  });
+  }, [cartProducts]);
 
   useEffect(() => {
-    if (timeLeft <= 0) {
+    if (timeLeft <= 0 && timeLeft !== 0) {
       localStorage.removeItem("cart");
       dispatch(removeAllProductFromCart());
 
