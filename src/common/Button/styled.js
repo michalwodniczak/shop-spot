@@ -20,7 +20,7 @@ export const RemoveButton = styled(StyledButton)`
   display: inline-block;
   margin-left: 10px;
 
-  &::before{
+  &::before {
     content: "Remove to Cart";
   }
 
