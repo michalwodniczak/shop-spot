@@ -6,7 +6,7 @@ import { Wrapper, Text } from "./styled";
 export const CartTimer = () => {
   const dispatch = useDispatch();
   const cartProducts = useSelector(selectCart);
-  const [timeLeft, setTimeLeft] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(null);
 
   useEffect(() => {
     const storeData = JSON.parse(localStorage.getItem("cart"));
@@ -19,11 +19,9 @@ export const CartTimer = () => {
   }, [cartProducts]);
 
   useEffect(() => {
-    if (timeLeft <= 0 && timeLeft !== 0) {
+    if (timeLeft === 0 && timeLeft !== null & cartProducts.length > 0) {
       localStorage.removeItem("cart");
       dispatch(removeAllProductFromCart());
-
-      return;
     }
 
     const interval = setInterval(() => {
