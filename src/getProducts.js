@@ -5,6 +5,10 @@ export const getProducts = async () => {
     const response = await axios.get("https://fakestoreapi.com/products");
     return response.data;
   } catch (error) {
-    console.error(error);
+    if (error.response) {
+      throw new Error(error.response.status);
+    } else {
+      throw new Error("Brak odpowiedzi z serwera");
+    }
   }
 };

@@ -5,12 +5,17 @@ const productsSlice = createSlice({
   initialState: {
     items: [],
     status: "N/A",
+    error: null,
   },
   reducers: {
     fetchProducts: () => {},
 
     fetchProductsSuccess: (state, { payload: items }) => {
       state.items = items;
+    },
+
+    fetchProductsFail: (state, { payload: error }) => {
+      state.error = error;
     },
 
     setStatus: (state, { payload: status }) => {
@@ -22,7 +27,12 @@ const productsSlice = createSlice({
 const selectProducts = (state) => state.products;
 export const selectItems = (state) => selectProducts(state).items;
 export const selectStatus = (state) => selectProducts(state).status;
-export const { fetchProducts, fetchProductsSuccess, setStatus } =
-  productsSlice.actions;
+export const selectError = (state) => selectProducts(state).error;
+export const {
+  fetchProducts,
+  fetchProductsSuccess,
+  fetchProductsFail,
+  setStatus,
+} = productsSlice.actions;
 
 export default productsSlice.reducer;
