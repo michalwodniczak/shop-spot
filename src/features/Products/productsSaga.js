@@ -2,8 +2,9 @@ import { call, put, takeLatest } from "redux-saga/effects";
 import { getProducts } from "../../getProducts";
 import {
   fetchProducts,
+  fetchProductsFail,
   fetchProductsSuccess,
-  setStatus
+  setStatus,
 } from "./productsSlice";
 
 function* fetchProductsHandler() {
@@ -12,8 +13,9 @@ function* fetchProductsHandler() {
     const products = yield call(getProducts);
     yield put(fetchProductsSuccess(products));
     yield put(setStatus("success"));
-  } catch {
-    yield call(alert, "coś poszło nie tak");
+  } catch (error) {
+    yield put(setStatus("error"));
+    yield put(fetchProductsFail(error.message));
   }
 }
 
